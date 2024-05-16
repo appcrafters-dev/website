@@ -1,0 +1,40 @@
+---
+import WorkLayout from '@layouts/WorkLayout.astro'
+import { getCollection } from 'astro:content'
+import { sortCaseStudies } from '@utils/caseStudies'
+import { slugify, reverseSlug } from '@utils/slugs'
+import { SITE } from '@config'
+import type { Page, PaginateFunction } from 'astro'
+import type { CaseStudy } from '@types'
+
+export async function getStaticPaths({
+  paginate,
+}: {
+  paginate: PaginateFunction
+}) {
+  const caseStudies = await getCollection('work')
+  const tags = caseStudies
+    .flatMap((caseStudy) => caseStudy.data.tags)
+    .filter((category, index, self) => self.indexOf(category) === index)
+
+  return tags.flatMap((tag) => {
+    // filter case studies by tag
+    const filteredCaseStudies = caseStudies.filter((caseStudy) =>
+      caseStudy.data.tags.includes(tag),
+    )
+    return paginate(sortCaseStudies(filteredCaseStudies), {
+      params: { tag: slugify(tag) },
+      pageSize: SITE.caseStudiesPerPage,
+    })
+  })
+}
+
+interface Props {
+  page: Page<CaseStudy>
+}
+
+const { page } = Astro.props
+const tag = reverseSlug(Astro.params.tag ?? '')
+---
+
+<WorkLayout page={page} title={`Work | ${tag} | ${SITE.title}`} />

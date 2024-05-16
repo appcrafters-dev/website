@@ -1,0 +1,22 @@
+---
+import Layout from '@layouts/Layout.astro'
+import AboutHero from '@components/AboutHero.astro'
+import WorkExperience from '@components/WorkExperience.astro'
+import Workstation from '@components/Workstation.astro'
+import Stack2 from '@components/Stack2.astro'
+import Awards from '@components/Awards.astro'
+import Press from '@components/Press.astro'
+import { SITE } from '@config'
+---
+
+<Layout
+  title={`About | ${SITE.title}`}
+  description="Hi, I'm Jane Doe, a passionate developer, entrepreneur, and general technology enthusiast living in San Francisco."
+>
+  <AboutHero />
+  <WorkExperience />
+  <Workstation />
+  <Stack2 />
+  <Awards />
+  <Press />
+</Layout>

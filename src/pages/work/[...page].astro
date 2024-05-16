@@ -1,0 +1,27 @@
+---
+import WorkLayout from '@layouts/WorkLayout.astro'
+import { getSortedCaseStudies } from '@utils/caseStudies'
+import { SITE } from '@config'
+import type { Page, PaginateFunction } from 'astro'
+import type { CaseStudy } from '@types'
+
+export async function getStaticPaths({
+  paginate,
+}: {
+  paginate: PaginateFunction
+}) {
+  const sortedCaseStudies = await getSortedCaseStudies()
+
+  return paginate(sortedCaseStudies, {
+    pageSize: SITE.caseStudiesPerPage,
+  })
+}
+
+interface Props {
+  page: Page<CaseStudy>
+}
+
+const { page } = Astro.props
+---
+
+<WorkLayout page={page} />

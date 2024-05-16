@@ -1,0 +1,48 @@
+---
+import Layout from '@layouts/Layout.astro'
+import CaseStudyHero from '@components/work/CaseStudyHero.astro'
+import CaseStudyDetails from '@components/work/CaseStudyDetails.astro'
+import CaseStudyGallery from '@components/work/CaseStudyGallery.astro'
+import CaseStudyTestimonial from '@components/work/CaseStudyTestimonial.astro'
+import CaseStudyNavigation from '@components/work/CaseStudyNavigation.astro'
+import { SITE } from '@config'
+import { getCollection } from 'astro:content'
+import type { CaseStudy } from '@types'
+
+export async function getStaticPaths() {
+  const caseStudies = await getCollection('work')
+  return caseStudies.map((caseStudy) => ({
+    params: { slug: caseStudy.slug },
+    props: { caseStudy },
+  }))
+}
+
+interface Props {
+  caseStudy: CaseStudy
+}
+
+const { caseStudy } = Astro.props
+
+const {
+  title,
+  description,
+  thumbnail: { src: ogImage },
+} = caseStudy.data
+
+const ogImageUrl = typeof ogImage === 'string' ? ogImage : ogImage?.src
+const { Content } = await caseStudy.render()
+---
+
+<Layout
+  title={`${title} | ${SITE.title}`}
+  description={description}
+  ogImage={ogImageUrl}
+>
+  <CaseStudyHero caseStudy={caseStudy} />
+  <CaseStudyDetails caseStudy={caseStudy}>
+    <Content />
+  </CaseStudyDetails>
+  <CaseStudyGallery caseStudy={caseStudy} />
+  <CaseStudyTestimonial caseStudy={caseStudy} />
+  <CaseStudyNavigation caseStudySlug={caseStudy.slug} />
+</Layout>
