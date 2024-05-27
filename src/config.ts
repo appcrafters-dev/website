@@ -27,10 +27,10 @@ export const SITE: Site = {
 export const SOCIALS: SocialObjects = [
   {
     name: 'mail',
-    href: 'mailto:rodrigo@tailwindawesome.com',
+    href: 'mailto:appcrafters.dev@gmail.com',
     label: 'Email me',
     ariaLabel: 'Send email',
-    showInHero: false,
+    showInHero: true,
   },
   {
     name: 'dribbble',
