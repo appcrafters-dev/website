@@ -32,13 +32,13 @@ export const SOCIALS: SocialObjects = [
     ariaLabel: 'Send email',
     showInHero: true,
   },
-  {
-    name: 'dribbble',
-    href: '#',
-    label: 'Dribbble',
-    ariaLabel: 'Follow on Dribbble',
-    showInHero: false,
-  },
+  // {
+  //   name: 'dribbble',
+  //   href: '#',
+  //   label: 'Dribbble',
+  //   ariaLabel: 'Follow on Dribbble',
+  //   showInHero: false,
+  // },
   {
     name: 'instagram',
     href: 'https://www.instagram.com/appcrafters.dev?igsh=MWVzNmIyM3ZtZHhndQ==',
@@ -46,13 +46,13 @@ export const SOCIALS: SocialObjects = [
     ariaLabel: 'Follow on Instagram',
     showInHero: true,
   },
-  {
-    name: 'x',
-    href: '#',
-    label: 'Twitter / X',
-    ariaLabel: 'Follow on X',
-    showInHero: false,
-  },
+  // {
+  //   name: 'x',
+  //   href: '#',
+  //   label: 'Twitter / X',
+  //   ariaLabel: 'Follow on X',
+  //   showInHero: false,
+  // },
   {
     name: 'linkedin',
     href: 'https://www.linkedin.com/company/appcrafters-dev/',
@@ -60,13 +60,13 @@ export const SOCIALS: SocialObjects = [
     ariaLabel: 'Follow on LinkedIn',
     showInHero: true,
   },
-  {
-    name: 'github',
-    href: '#',
-    label: 'Github',
-    ariaLabel: 'Follow on Github',
-    showInHero: false,
-  },
+  // {
+  //   name: 'github',
+  //   href: '#',
+  //   label: 'Github',
+  //   ariaLabel: 'Follow on Github',
+  //   showInHero: false,
+  // },
 ]
 
 export const STACK: StackObjects = [
