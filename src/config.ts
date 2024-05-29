@@ -2,6 +2,7 @@ import type { Site, SocialObjects, StackObjects } from './types'
 import rails from './images/logos/icons/rails.png'
 import javascript from './images/logos/icons/javascript.png'
 import html5 from './images/logos/icons/html5.png'
+import flutter from './images/logos/icons/flutter.png'
 import css from './images/logos/icons/css.png'
 import netlify from './images/logos/icons/netlify.png'
 import python from './images/logos/icons/python.png'
@@ -97,9 +98,9 @@ export const STACK: StackObjects = [
     logo: sketch,
   },
   {
-    name: 'Rails',
-    experience: '7+ years of experience',
-    logo: rails,
+    name: 'Flutter',
+    experience: '5+ years of experience',
+    logo: flutter,
   },
   {
     name: 'Netlify',
