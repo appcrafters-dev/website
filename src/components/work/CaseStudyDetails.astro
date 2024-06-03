@@ -23,14 +23,10 @@ function getFormattedTimeline(timeline: { start: Date; end: Date }) {
     month: 'short',
     year: 'numeric',
   })
-  // const startFormatted = formatter.format(timeline.start)
-  // const endFormatted = formatter.format(timeline.end)
 
-  // Handle pluralization
   const monthLabel = monthDifference === 1 ? 'month' : 'months'
 
   const formattedTimeline = `${monthDifference} ${monthLabel}`
-  // const formattedTimeline = `${monthDifference} ${monthLabel} (${startFormatted} - ${endFormatted})`
 
   return formattedTimeline
 }
@@ -44,11 +40,27 @@ function getFormattedTimeline(timeline: { start: Date; end: Date }) {
       class="order-2 mt-8 border-t border-slate-200 pt-8 lg:order-1 lg:col-span-3 lg:mt-0 lg:border-0 lg:pr-8 lg:pt-0"
     >
       <dl class="space-y-8">
-        {client.description?.trim() && <Detail label="Client" data={client.description} />}
-        {client.industry?.trim() && <Detail label="Industry" data={client.industry} />}
-        {client.companySize?.trim() && <Detail label="Company Size" data={client.companySize} />}
-        {client.headquarters?.trim() && <Detail label="Headquarters" data={client.headquarters} />}
-        
+        {
+          client.description?.trim() && (
+            <Detail label="Client" data={client.description} />
+          )
+        }
+        {
+          client.industry?.trim() && (
+            <Detail label="Industry" data={client.industry} />
+          )
+        }
+        {
+          client.companySize?.trim() && (
+            <Detail label="Company Size" data={client.companySize} />
+          )
+        }
+        {
+          client.headquarters?.trim() && (
+            <Detail label="Headquarters" data={client.headquarters} />
+          )
+        }
+
         <Detail
           label="Project Duration"
           data={getFormattedTimeline(timeline)}
@@ -69,16 +81,29 @@ function getFormattedTimeline(timeline: { start: Date; end: Date }) {
         {description}
       </h3>
       <div class="prose mt-6 sm:prose-lg sm:mt-8"><slot /></div>
-      {features && (
-        <div class="mt-5">
-          <p class="font-bold mb-2" style="font-size: 1.5rem;">Features:</p>
-          <ul class="list-disc pl-6">
-            {features.map((feature) => (
-              <li>{feature}</li>
-            ))}
-          </ul>
-        </div>
-      )}
+      {
+        features && (
+          <div class="mt-5">
+            <p class="mb-2 font-bold" style="font-size: 1.5rem;">
+              Features:
+            </p>
+            <ul>
+              {features.map((feature: any, index) => (
+                <li class="mb-3">
+                  <strong>{index + 1}. {feature.title}</strong>
+                  {feature.items && (
+                    <ul class="list-disc pl-6">
+                      {feature.items.map((item : any) => (
+                        <li>{item}</li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )
+      }
     </div>
   </div>
 </section>
