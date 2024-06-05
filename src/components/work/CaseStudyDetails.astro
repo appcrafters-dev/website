@@ -10,7 +10,7 @@ interface Props {
 
 const {
   caseStudy: {
-    data: { client, description, timeline, projectURL, features },
+    data: { client, description, timeline, projectURL, technology, features },
   },
 } = Astro.props
 
@@ -48,6 +48,11 @@ function getFormattedTimeline(timeline: { start: Date; end: Date }) {
         {
           client.industry?.trim() && (
             <Detail label="Industry" data={client.industry} />
+          )
+        }
+        {
+          technology?.trim() && (
+            <Detail label="Technology" data={technology} />
           )
         }
         {
