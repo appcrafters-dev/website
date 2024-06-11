@@ -9,16 +9,16 @@ interface Props {
 
 const { caseStudySlug } = Astro.props
 
-async function getSortedCaseStudiesAndIndex(caseStudySlug) {
+async function getSortedCaseStudiesAndIndex(caseStudySlug: string) {
   const caseStudies = (await getCollection('work')).sort(
-    (a, b) => b.data.timeline.end.valueOf() - a.data.timeline.end.valueOf(),
+      (a, b) => (b.data.timeline.end?.valueOf() || 0) - (a.data.timeline.end?.valueOf() || 0),
   )
 
   const index = caseStudies.findIndex((p) => p.slug === caseStudySlug)
   return { caseStudies, index }
 }
 
-async function findAdjacentCaseStudy(caseStudySlug, offset) {
+async function findAdjacentCaseStudy(caseStudySlug: string, offset: number) {
   const { caseStudies, index } =
     await getSortedCaseStudiesAndIndex(caseStudySlug)
   const newIndex = (index + offset + caseStudies.length) % caseStudies.length

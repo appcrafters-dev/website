@@ -64,8 +64,8 @@ const caseStudiesCollection = defineCollection({
         }),
       }),
       timeline: z.object({
-        start: z.date(),
-        end: z.date(),
+        start: z.date().nullable(),
+        end: z.date().nullable(),
       }),
     }),
 })

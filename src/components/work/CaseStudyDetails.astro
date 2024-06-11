@@ -14,22 +14,32 @@ const {
   },
 } = Astro.props
 
-function getFormattedTimeline(timeline: { start: Date; end: Date }) {
-  const monthDifference =
-    (timeline.end.getFullYear() - timeline.start.getFullYear()) * 12 +
-    (timeline.end.getMonth() - timeline.start.getMonth())
-
+function getFormattedTimeline(timeline: { start: Date | null ; end: Date | null }) {
+  if (!timeline.start) {
+    return 'Unknown';
+  }
+  
   const formatter = new Intl.DateTimeFormat('en-US', {
     month: 'short',
     year: 'numeric',
-  })
+  });
 
-  const monthLabel = monthDifference === 1 ? 'month' : 'months'
+  if (!timeline.end) {
+    return `${formatter.format(timeline.start)} to Present`;
+  }
 
-  const formattedTimeline = `${monthDifference} ${monthLabel}`
+  const monthDifference =
+    (timeline.end.getFullYear() - timeline.start.getFullYear()) * 12 +
+    (timeline.end.getMonth() - timeline.start.getMonth());
 
-  return formattedTimeline
+  const monthLabel = monthDifference === 1 ? 'month' : 'months';
+  const formattedTimeline = `${monthDifference} ${monthLabel} (${formatter.format(
+    timeline.start
+  )} - ${formatter.format(timeline.end)})`;
+
+  return formattedTimeline;
 }
+
 ---
 
 <section class="overflow-hidden bg-white py-16 sm:py-20 lg:py-28">
