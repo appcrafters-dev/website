@@ -65,37 +65,39 @@ const {
   }
 </style>
 
-<section class="overflow-hidden py-16 bg-slate-50 sm:py-24 lg:py-28 xl:py-5">
-  <center>
-  <Container>
-    <div class="slider-container">
-      <div class="slider-wrapper">
-        {images.map((image: any) => (
-          <div class="slider-slide">
-            <div class="aspect-h-2 aspect-w-3 w-full overflow-hidden sm:aspect-h-2 sm:aspect-w-4">
-              <Image
-                src={image.src}
-                alt={image.alt}
-                class="w-full h-full rounded-3xl bg-slate-100 object-center"
-                style="object-fit: contain;"
-              />
+{images && images.length > 0 && (
+  <section class="overflow-hidden py-16 bg-slate-50 sm:py-24 lg:py-28 xl:py-5">
+    <center>
+    <Container>
+      <div class="slider-container">
+        <div class="slider-wrapper">
+          {images.map((image: any) => (
+            <div class="slider-slide">
+              <div class="aspect-h-2 aspect-w-3 w-full overflow-hidden sm:aspect-h-2 sm:aspect-w-4">
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  class="w-full h-full rounded-3xl bg-slate-100 object-center"
+                  style="object-fit: contain;"
+                />
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+        <button class="slider-button-prev" onclick="prevSlide()">&#10094;</button>
+        <button class="slider-button-next" onclick="nextSlide()">&#10095;</button>
       </div>
-      <button class="slider-button-prev" onclick="prevSlide()">&#10094;</button>
-      <button class="slider-button-next" onclick="nextSlide()">&#10095;</button>
-    </div>
-  </Container>
-</center>
-</section>
+    </Container>
+    </center>
+  </section>
+)}
 
 <script>
   let currentSlide = 0;
 
   function showSlide(index: number) {
     const slides = document.querySelectorAll('.slider-slide');
-    const wrapper: HTMLElement | null = document.querySelector('.slider-wrapper');
+    const wrapper = document.querySelector('.slider-wrapper') as HTMLElement;
     if (index >= slides.length) {
       currentSlide = 0;
     } else if (index < 0) {
@@ -127,7 +129,6 @@ const {
     }
   }
 
-  
   window.nextSlide = nextSlide;
   window.prevSlide = prevSlide;
 </script>

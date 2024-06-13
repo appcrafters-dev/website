@@ -44,7 +44,7 @@ const caseStudiesCollection = defineCollection({
           src: image(),
           alt: z.string(),
         }),
-      ),
+      ).nullable(),
       projectURL: z.string().url(),
       technology: z.string(),
       description: z.string(),
