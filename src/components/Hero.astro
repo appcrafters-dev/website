@@ -42,7 +42,7 @@ import quality from '@images/logos/icons/quality.png'
       <div
         class="mt-10 flex flex-wrap items-center justify-center gap-x-10 gap-y-6 lg:justify-start"
       >
-        <Button href="#" class="h-11">Connect with us</Button>
+        <Button href="/contact" target="_blank" class="h-11">Connect with us</Button>
 
         <div class="flex gap-3 sm:gap-4">
           {
@@ -51,6 +51,7 @@ import quality from '@images/logos/icons/quality.png'
                 href={socialLink.href}
                 aria-label={socialLink.ariaLabel}
                 class="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 duration-200 hover:bg-slate-50"
+                target="_blank"
               >
                 <Icon
                   name={socialLink.name}

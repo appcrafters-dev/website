@@ -18,7 +18,7 @@ const links = [
   { label: 'Blog', href: '/blog' },
 
   // { label: 'Technology', href: '/technology' },
-  { label: 'Contact', href: '/contact' },
+  // { label: 'Contact', href: '/contact' },
 ]
 ---
 
@@ -83,7 +83,7 @@ const links = [
             Lets make something great together
           </h3>
           <div class="hidden lg:block">
-            <Button href="#" variant="primaryOnDark" class="mt-12">
+            <Button href="/contact" target="_blank" variant="primaryOnDark" class="mt-12">
               Connect with us
               <Icon name="arrow-up-right" class="h-5 w-5" />
             </Button>
@@ -93,7 +93,7 @@ const links = [
           <p class="text-center text-lg text-slate-50 lg:max-w-sm lg:text-left">
             "Collaborate with us on your next digitization journey!"
           </p>
-          <Button href="#" variant="primaryOnDark" class="mt-10 lg:hidden">
+          <Button href="/contact" target="_blank" variant="primaryOnDark" class="mt-10 lg:hidden">
             Connect with us
             <Icon name="arrow-up-right" class="h-5 w-5" />
           </Button>
@@ -106,6 +106,7 @@ const links = [
                   <a
                     class="flex items-center justify-center gap-2.5 rounded-full border border-slate-600/90 py-2.5 text-sm text-slate-50 duration-200 ease-in-out hover:bg-slate-800 hover:text-white lg:gap-2 xl:gap-2.5"
                     href={socialLink.href}
+                    target="_blank"
                   >
                     <Icon
                       name={socialLink.name}
@@ -129,6 +130,7 @@ const links = [
               <a
                 href={link.href}
                 class="text-base font-medium text-slate-100 duration-200 ease-in-out hover:text-white"
+                target="_blank"
               >
                 {link.label}
               </a>

@@ -13,7 +13,7 @@ const links = [
   { label: 'Work', href: '/work' },
   { label: 'Blog', href: '/blog' },
   // { label: 'Technology', href: '/technology' },
-  { label: 'Contact', href: '/contact' },
+  // { label: 'Contact', href: '/contact' },
 ]
 
 const pages = [
@@ -118,7 +118,7 @@ const pages = [
 
       <div class="flex items-center">
         <!-- Call to action -->
-        <Button href="#0" variant="secondary">Connect with us</Button>
+        <Button href="/contact" variant="secondary">Connect with us</Button>
 
         <!-- Mobile menu button -->
         <div class="ml-4 md:hidden" x-data="{ mobileMenuOpen: false }">
@@ -184,6 +184,7 @@ const pages = [
                       <a
                         href={link.href}
                         class="block text-base font-semibold text-slate-700 duration-200 hover:text-slate-900"
+                        target="_blank"
                       >
                         {link.label}
                       </a>
@@ -217,6 +218,7 @@ const pages = [
                             <a
                               href={link.href}
                               class="block text-md font-medium text-slate-700 transition duration-200 ease-in-out hover:text-slate-900"
+                              target="_blank"
                             >
                               {link.label}
                             </a>

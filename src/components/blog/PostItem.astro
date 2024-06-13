@@ -31,6 +31,7 @@ const categorySlug = slugify(post.category)
     <a
       href={post.path}
       class="group aspect-h-9 aspect-w-16 relative block w-full overflow-hidden rounded-xl md:aspect-h-2 md:aspect-w-3"
+      target="_blank"
     >
       <Image
         src={post.image.src}
@@ -48,6 +49,7 @@ const categorySlug = slugify(post.category)
     <a
       href={`/blog/${categorySlug}#articles`}
       class="group relative z-10 flex items-center gap-2.5 text-md text-sky-700 transition duration-200 ease-in-out hover:text-sky-600"
+      target="_blank"
     >
       <Icon name={categorySlug} class="h-4 w-4 text-sky-600" />
 
@@ -57,7 +59,7 @@ const categorySlug = slugify(post.category)
       <h3
         class="mt-4 font-display text-xl font-medium leading-normal text-slate-900 decoration-slate-400 transition duration-200 ease-in-out group-hover:text-sky-900"
       >
-        <a href={post.path}>
+        <a href={post.path} target="_blank">
           <span class="absolute inset-0"></span>
           {post.title}
         </a>
