@@ -19,7 +19,7 @@ export const SITE: Site = {
   author: 'Rodrigo Aguilar',
   description:
     "I'm a passionate developer, entrepreneur, and general technology enthusiast living in San Francisco. I've worked with hundreds of startups to help them develop their ideas into profitable businesses.",
-  title: 'Jane Doe',
+  title: 'Appcrafters',
   ogImage: 'jane-og.png',
   postsPerPage: 9,
   caseStudiesPerPage: 6,
