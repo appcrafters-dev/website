@@ -76,10 +76,10 @@ function getFormattedTimeline(timeline: { start: Date | null ; end: Date | null 
           )
         }
 
-        <Detail
+        <!-- <Detail
           label="Project Duration"
           data={getFormattedTimeline(timeline)}
-        />
+        /> -->
       </dl>
       { (projectURL ?? projectURL)?.trim() && (
         <Button href={projectURL ?? undefined} target="_blank" class="mt-14 !font-medium">
