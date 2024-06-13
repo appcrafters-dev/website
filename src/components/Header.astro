@@ -11,7 +11,8 @@ const links = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
   { label: 'Work', href: '/work' },
-  { label: 'Technology', href: '/technology' },
+  { label: 'Blog', href: '/blog' },
+  // { label: 'Technology', href: '/technology' },
   { label: 'Contact', href: '/contact' },
 ]
 
@@ -19,9 +20,9 @@ const pages = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
   { label: 'Work', href: '/work' },
-  { label: 'Technology', href: '/technology' },
+  // { label: 'Technology', href: '/technology' },
   // { label: 'Case study', href: '/work/horizons-in-perspective' },
-  // { label: 'Blog', href: '/blog' },
+  { label: 'Blog', href: '/blog' },
   // {
   //   label: 'Blog post',
   //   href: '/blog/how-i-use-tailwind-to-design-from-scratch',
@@ -71,21 +72,22 @@ const pages = [
         }
 
         <!-- Template pages dropdown container -->
+           <!-- Pages dropdown button -->
         <div class="relative" x-data="{ open: false }">
-          <!-- Pages dropdown button -->
+        
           <button
             type="button"
             class="group flex items-center font-medium duration-200 ease-in-out"
             :class="open ? 'text-slate-900' : 'text-slate-700  hover:text-slate-900'"
             @click="open = true"
           >
-            <span>Pages</span>
+            <!-- <span>Pages</span>
 
             <Icon
               name="chevron-down"
               class="ml-2 h-5 w-5 duration-300"
               :class="open ? 'rotate-180 text-slate-900' : 'text-slate-600 group-hover:text-slate-800'"
-            />
+            /> -->
           </button>
 
           <!-- Pages dropdown -->
