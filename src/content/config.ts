@@ -45,7 +45,7 @@ const caseStudiesCollection = defineCollection({
           alt: z.string(),
         }),
       ).nullable(),
-      projectURL: z.string().url(),
+      projectURL: z.string().url().nullable(),
       technology: z.string(),
       description: z.string(),
       client: z.object({
