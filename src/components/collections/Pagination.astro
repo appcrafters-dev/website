@@ -45,7 +45,6 @@ function getPageUrl(pageNumber: number) {
   <!-- Prev Button -->
   <a
     href={appendHash(page.url.prev)}
-    target="_blank"
     class={`inline-flex h-10 w-20 items-center justify-center rounded-full text-sm font-medium shadow-sm ring-1 ring-slate-900/5 bg-slate-50 
       ${
         page.currentPage === 1
@@ -69,7 +68,6 @@ function getPageUrl(pageNumber: number) {
         return (
           <a
             href={getPageUrl(pageNumber)}
-            target="_blank"
             class={`hidden h-10 w-10 items-center justify-center rounded-full text-sm font-medium shadow-sm ring-1 ring-slate-900/5 sm:inline-flex 
             ${
               isCurrentPage
@@ -100,7 +98,6 @@ function getPageUrl(pageNumber: number) {
   <!-- Next Button -->
   <a
     href={appendHash(page.url.next)}
-    target="_blank"
     class={`inline-flex h-10 w-20 items-center justify-center rounded-full text-sm font-medium shadow-sm ring-1 ring-slate-900/5 bg-slate-50 
       ${
         page.currentPage === page.lastPage
