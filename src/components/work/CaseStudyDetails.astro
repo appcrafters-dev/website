@@ -106,12 +106,12 @@ function getFormattedTimeline(timeline: { start: Date | null ; end: Date | null 
             </p>
             <ul>
               {features.map((feature: any, index) => (
-                <li class="mb-3 mt-2 font-display">
-                  <strong class="font-display text-xl font-medium leading-8 text-slate-900 sm:leading-10">{index + 1}. {feature.title}</strong>
+                <li class="mb-3 mt-2">
+                  <strong class="text-xl font-medium leading-8 text-slate-900 sm:leading-10">{index + 1}. {feature.title}</strong>
                   {feature.items && (
                     <ul class="list-disc pl-6">
                       {feature.items.map((item : any) => (
-                        <li class="font-display font-light text-slate-700">{item}</li>
+                        <li class="font-normal text-slate-700">{item}</li>
                       ))}
                     </ul>
                   )}
