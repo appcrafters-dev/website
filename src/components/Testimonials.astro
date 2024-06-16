@@ -3,11 +3,12 @@ import { Image } from 'astro:assets'
 import { Icon } from 'astro-icon'
 
 import Container from './Container.astro'
-import avatarImage1 from '@images/avatars/avatar-1.png'
-import avatarImage2 from '@images/avatars/avatar-2.png'
-import avatarImage3 from '@images/avatars/avatar-3.png'
-import avatarImage4 from '@images/avatars/avatar-4.png'
-import avatarImage5 from '@images/avatars/avatar-5.png'
+
+import pulseLogo from '@images/case_studies/pulse_ai/logo.png'
+import relateLogo from '@images/case_studies/relate/tfm_logo.png'
+import filtersourceLogo from '@images/case_studies/filtersource/logo.jpg'
+import unlockLogo from '@images/case_studies/unlock/logo.png'
+import skyScrapperLogo from '@images/case_studies/skyscrapper/skyscrapper.png'
 
 import zendesk from '@images/logos/zendesk.svg'
 import intercom from '@images/logos/intercom.svg'
@@ -24,101 +25,51 @@ const testimonials = [
   {
     headline: '“Highly skilled and professional”',
     content:
-      'And robusta french bar luwak extra caffeine cup filter macchiato skinny shop cream that variety. Caramel black affogato con frappuccino mocha sweet milk and.',
+      'I chose Appcrafters for my ambitious project, the Pulse Utilities app development, in 2021. Throughout our association, Appcrafters has consistently exceeded my expectations with exceptional efficiency. They met all my evolving requirements with deadlines. Their deep understanding of my project and exceptional communication skills greatly impressed me. I highly recommend Appcrafters as a reliable web and app development company.',
     author: {
-      name: 'Katy Jackson',
-      role: 'Designer at Mailgorilla',
-      image: avatarImage1,
+      name: 'Pulse AI',
+      role: 'CEO of Pulse AI',
+      image: pulseLogo,
     },
   },
   {
-    headline: '“I highly recommend him”',
+    headline: '“I highly recommend Appcrafters”',
     content:
-      'And robusta french bar luwak extra caffeine cup filter macchiato skinny shop cream that variety. Caramel black affogato con frappuccino mocha sweet milk and.',
+      'We contracted Appcrafters originally to help us design the Total Family Management payments solution and scheduling module. We were highly impressed with the quality of the development task and the team’s ability to understand our vision intuitively. This project led to a long-term partnership. The project manager and developers consistently delivered satisfactory work. I highly recommend them for anything related to app design and development.',
     author: {
-      name: 'Sean Murphy',
-      role: 'Founder of North Agency',
-      image: avatarImage2,
+      name: 'Total Family Management',
+      role: 'Founder of Romly Tech',
+      image: relateLogo,
     },
   },
   {
-    headline: '“I’m so lucky I found John!”',
+    headline: '“I’m so lucky I found Appcrafters!”',
     content:
-      'And robusta french bar luwak extra caffeine cup filter macchiato skinny shop cream that variety. Caramel black affogato con frappuccino mocha sweet milk and.',
+      'We hired Appcrafters to revisit our website and enterprise solution for product category with more than 100k+ products. Appcrafters did this in a very short amount of time with much much higher quality. We want to thank the whole Appcrafters team for the hard work they did to get this up to successful completion.',
     author: {
-      name: 'Elaine Foster',
-      role: 'CEO of Wakatech',
-      image: avatarImage3,
+      name: 'Filtersource',
+      role: 'CEO of Filtersource',
+      image: filtersourceLogo,
     },
   },
   {
-    headline: '“I’m really impressed with the quality of his work”',
+    headline: '“We are really impressed with the quality of their work”',
     content:
-      'And robusta french bar luwak extra caffeine cup filter macchiato skinny shop cream that variety. Caramel black affogato con frappuccino mocha sweet milk and.',
+      'The Unlock app has been a great initiative for our Navrachana University. With its innovative features, we have been able to ensure a seamless and secure access management system. The contactless check-in and check-out feature has significantly helped students to get back to normal routine for university after COVID-19. We highly recommend Appcrafters and wish our students the best for their future endeavors.',
     author: {
-      name: 'Jeff Bick',
-      role: 'Developer at Bad Inc.',
-      image: avatarImage4,
-    },
-  },
-  {
-    headline: '“Seriously awesome!”',
-    content:
-      'And robusta french bar luwak extra caffeine cup filter macchiato skinny shop cream that variety. Caramel black affogato con frappuccino mocha sweet milk and.',
-    author: {
-      name: 'Jason Cosmo',
-      role: 'CEO of Eastern Digital',
-      image: avatarImage5,
-    },
-  },
-  {
-    headline: '“Highly skilled and professional”',
-    content:
-      'And robusta french bar luwak extra caffeine cup filter macchiato skinny shop cream that variety. Caramel black affogato con frappuccino mocha sweet milk and.',
-    author: {
-      name: 'Katy Jackson',
-      role: 'Designer at Mailgorilla',
-      image: avatarImage1,
-    },
-  },
-  {
-    headline: '“I highly recommend him”',
-    content:
-      'And robusta french bar luwak extra caffeine cup filter macchiato skinny shop cream that variety. Caramel black affogato con frappuccino mocha sweet milk and.',
-    author: {
-      name: 'Sean Murphy',
-      role: 'Founder of North Agency',
-      image: avatarImage2,
-    },
-  },
-  {
-    headline: '“I’m so lucky I found John!”',
-    content:
-      'And robusta french bar luwak extra caffeine cup filter macchiato skinny shop cream that variety. Caramel black affogato con frappuccino mocha sweet milk and.',
-    author: {
-      name: 'Elaine Foster',
-      role: 'CEO of Wakatech',
-      image: avatarImage3,
-    },
-  },
-  {
-    headline: '“I’m really impressed with the quality of his work”',
-    content:
-      'And robusta french bar luwak extra caffeine cup filter macchiato skinny shop cream that variety. Caramel black affogato con frappuccino mocha sweet milk and.',
-    author: {
-      name: 'Jeff Bick',
-      role: 'Developer at Bad Inc.',
-      image: avatarImage4,
+      name: 'Unlock',
+      role: 'Navrachana University',
+      image: unlockLogo,
     },
   },
   {
     headline: '“Seriously awesome!”',
     content:
-      'And robusta french bar luwak extra caffeine cup filter macchiato skinny shop cream that variety. Caramel black affogato con frappuccino mocha sweet milk and.',
+      'Appcrafters transformed our vision into an intuitive and powerful project management app with Skyscraper. Their expertise and creativity significantly improved our workflows, handling complex tasks seamlessly. The professionalism of team and commitment to excellence ensured flawless execution. We highly recommend Appcrafters for innovative and top-notch solutions.',
     author: {
-      name: 'Jason Cosmo',
-      role: 'CEO of Eastern Digital',
-      image: avatarImage5,
+      name: 'SkyScrapper',
+      role: 'CEO of SkyScrapper',
+      image: skyScrapperLogo,
     },
   },
 ]
