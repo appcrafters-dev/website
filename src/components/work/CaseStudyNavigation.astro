@@ -9,16 +9,16 @@ interface Props {
 
 const { caseStudySlug } = Astro.props
 
-async function getSortedCaseStudiesAndIndex(caseStudySlug) {
+async function getSortedCaseStudiesAndIndex(caseStudySlug: string) {
   const caseStudies = (await getCollection('work')).sort(
-    (a, b) => b.data.timeline.end.valueOf() - a.data.timeline.end.valueOf(),
+      (a, b) => (b.data.timeline.end?.valueOf() || 0) - (a.data.timeline.end?.valueOf() || 0),
   )
 
   const index = caseStudies.findIndex((p) => p.slug === caseStudySlug)
   return { caseStudies, index }
 }
 
-async function findAdjacentCaseStudy(caseStudySlug, offset) {
+async function findAdjacentCaseStudy(caseStudySlug: string, offset: number) {
   const { caseStudies, index } =
     await getSortedCaseStudiesAndIndex(caseStudySlug)
   const newIndex = (index + offset + caseStudies.length) % caseStudies.length
@@ -32,7 +32,7 @@ const nextCaseStudy = await findAdjacentCaseStudy(caseStudySlug, 1)
 <section class="border-t border-slate-200 py-8">
   <Container>
     <div class="flex items-center justify-between">
-      <a href={`/work/${prevCaseStudy.slug}`} class="group space-y-1.5">
+      <a href={`/work/${prevCaseStudy.slug}`} target="_blank" class="group space-y-1.5">
         <div
           class="flex items-center gap-1 text-slate-500 duration-200 group-hover:text-sky-500"
         >

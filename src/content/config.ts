@@ -25,6 +25,12 @@ const caseStudiesCollection = defineCollection({
       title: z.string(),
       subtitle: z.string(),
       tags: z.array(z.string()),
+      features: z.array(
+        z.object({
+          title: z.string(),
+          items: z.array(z.string()),
+        })
+      ),
       thumbnail: z.object({
         src: image(),
         alt: z.string(),
@@ -38,8 +44,9 @@ const caseStudiesCollection = defineCollection({
           src: image(),
           alt: z.string(),
         }),
-      ),
-      projectURL: z.string().url(),
+      ).nullable(),
+      projectURL: z.string().url().nullable(),
+      technology: z.string(),
       description: z.string(),
       client: z.object({
         name: z.string(),
@@ -49,16 +56,16 @@ const caseStudiesCollection = defineCollection({
         headquarters: z.string(),
       }),
       testimonial: z.object({
-        text: z.string(),
+        text: z.string().nullable(),
         author: z.object({
-          name: z.string(),
-          role: z.string(),
-          image: image(),
-        }),
-      }),
+          name: z.string().nullable(),
+          role: z.string().nullable(),
+          image: image().nullable(),
+        }).nullable(),
+      }).nullable(),
       timeline: z.object({
-        start: z.date(),
-        end: z.date(),
+        start: z.date().nullable(),
+        end: z.date().nullable(),
       }),
     }),
 })

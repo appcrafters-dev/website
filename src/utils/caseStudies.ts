@@ -28,7 +28,11 @@ export async function getFeaturedTags() {
 
 export function sortCaseStudies(caseStudies: CaseStudy[]) {
   return caseStudies.sort(
-    (a, b) => b.data.timeline.end.valueOf() - a.data.timeline.end.valueOf(),
+    (a, b) => {
+      const aEnd = a.data.timeline.end?.valueOf() || 0;
+      const bEnd = b.data.timeline.end?.valueOf() || 0;
+      return bEnd - aEnd;
+    }
   )
 }
 
