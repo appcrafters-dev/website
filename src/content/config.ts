@@ -56,13 +56,13 @@ const caseStudiesCollection = defineCollection({
         headquarters: z.string(),
       }),
       testimonial: z.object({
-        text: z.string(),
+        text: z.string().nullable(),
         author: z.object({
-          name: z.string(),
-          role: z.string(),
-          image: image(),
-        }),
-      }),
+          name: z.string().nullable(),
+          role: z.string().nullable(),
+          image: image().nullable(),
+        }).nullable(),
+      }).nullable(),
       timeline: z.object({
         start: z.date().nullable(),
         end: z.date().nullable(),
