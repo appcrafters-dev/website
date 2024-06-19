@@ -4,6 +4,7 @@ import logo from '@images/logo.png'
 import logoIcon from '@images/logo-icon.png'
 import { Icon } from 'astro-icon'
 import Button from '@components/Button.astro'
+import { FEATURE_BLOGS } from '@config'
 
 const pathname = Astro.url.pathname.replace(/(?<=.)\/$/, '')
 
@@ -11,9 +12,12 @@ const links = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
   { label: 'Work', href: '/work' },
-  { label: 'Blog', href: '/blog' },
   { label: 'Contact', href: '/contact' },
 ]
+
+if (FEATURE_BLOGS.SHOW_FEATURED_BLOGS) {
+  links.push({ label: 'Blog', href: '/blog' })
+}
 
 const pages = [
   { label: 'Home', href: '/' },

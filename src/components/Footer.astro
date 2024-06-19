@@ -4,7 +4,7 @@ import { Icon } from 'astro-icon'
 import Button from '@components/Button.astro'
 import Container from '@components/Container.astro'
 import newsletterBg from '@images/newsletter-bg.png'
-import { SOCIALS } from '@config'
+import { SOCIALS, FEATURE_BLOGS } from '@config'
 
 interface Props {
   newsletter?: boolean
@@ -15,9 +15,12 @@ const links = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
   { label: 'Work', href: '/work' },
-  { label: 'Blog', href: '/blog' },
   { label: 'Contact', href: '/contact' },
 ]
+
+if (FEATURE_BLOGS.SHOW_FEATURED_BLOGS) {
+  links.push({ label: 'Blog', href: '/blog' })
+}
 ---
 
 <section class:list={[newsletter && 'pt-12 sm:pt-16']}>
