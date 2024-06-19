@@ -130,6 +130,6 @@ export const STACK: StackObjects = [
   },
 ]
 
-export const FEATURE_BLOGS = {
-  SHOW_FEATURED_BLOGS: false,
+export const FEATURE_FLAG = {
+  SHOW_BLOG: true,
 }

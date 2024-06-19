@@ -4,7 +4,7 @@ import { Icon } from 'astro-icon'
 import Button from '@components/Button.astro'
 import Container from '@components/Container.astro'
 import newsletterBg from '@images/newsletter-bg.png'
-import { SOCIALS, FEATURE_BLOGS } from '@config'
+import { SOCIALS, FEATURE_FLAG } from '@config'
 
 interface Props {
   newsletter?: boolean
@@ -18,7 +18,7 @@ const links = [
   { label: 'Contact', href: '/contact' },
 ]
 
-if (FEATURE_BLOGS.SHOW_FEATURED_BLOGS) {
+if (FEATURE_FLAG.SHOW_BLOG) {
   links.push({ label: 'Blog', href: '/blog' })
 }
 ---
