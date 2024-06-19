@@ -129,3 +129,7 @@ export const STACK: StackObjects = [
     logo: ruby,
   },
 ]
+
+export const FEATURE_BLOGS = {
+  SHOW_FEATURED_BLOGS: false,
+}
