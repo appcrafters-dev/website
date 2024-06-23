@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets'
+import CurvyLines from '@components/illustrations/CurvyLines.astro'
 import Container from './Container.astro'
-import CurvyLines from './illustrations/CurvyLines.astro'
 import Underline from '@components/illustrations/Underline.astro'
 import heroImage from '@images/about/abouthero.webp'
 import bgGradient from '@images/about-hero-gradient.svg'
@@ -10,19 +10,12 @@ import mission from '@images/about/mission.png'
 import pruthvi from '@images/about/pruthvi.jpg'
 import shubh from '@images/about/shubh.png'
 import dhrumil from '@images/about/dhrumil.png'
-import '@fontsource/mr-dafoe'
 ---
 
-<section class="relative bg-slate-50/50">
-  <Image
-    src={bgGradient}
-    alt=""
-    class="absolute inset-0 h-full w-full object-cover object-left lg:w-2/3"
-  />
-
+<section class="relative">
   <Container class="relative py-16 sm:py-24 lg:py-32">
     <div
-      class="mx-auto max-w-3xl px-4 sm:px-6 lg:mx-0 lg:w-2/3 lg:max-w-none lg:px-8 lg:pr-16"
+      class="mx-auto max-w-2xl px-4 sm:px-6 lg:mx-0 lg:w-2/3 lg:max-w-none lg:px-8 lg:pr-16"
     >
       <h1
         class="font-display text-5xl font-semibold text-slate-900 sm:text-6xl"

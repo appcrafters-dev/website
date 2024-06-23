@@ -130,3 +130,7 @@ export const STACK: StackObjects = [
     logo: ruby,
   },
 ]
+
+export const FEATURE_FLAGS = {
+  SHOW_BLOG: false,
+}
