@@ -2,6 +2,7 @@ import type { Site, SocialObjects, StackObjects } from './types'
 import rails from './images/logos/icons/rails.png'
 import javascript from './images/logos/icons/javascript.png'
 import html5 from './images/logos/icons/html5.png'
+import flutter from './images/logos/icons/flutter.png'
 import css from './images/logos/icons/css.png'
 import netlify from './images/logos/icons/netlify.png'
 import python from './images/logos/icons/python.png'
@@ -18,7 +19,7 @@ export const SITE: Site = {
   author: 'Rodrigo Aguilar',
   description:
     "I'm a passionate developer, entrepreneur, and general technology enthusiast living in San Francisco. I've worked with hundreds of startups to help them develop their ideas into profitable businesses.",
-  title: 'Jane Doe',
+  title: 'Appcrafters',
   ogImage: 'jane-og.png',
   postsPerPage: 9,
   caseStudiesPerPage: 6,
@@ -27,46 +28,46 @@ export const SITE: Site = {
 export const SOCIALS: SocialObjects = [
   {
     name: 'mail',
-    href: 'mailto:rodrigo@tailwindawesome.com',
+    href: 'mailto:appcrafters.dev@gmail.com',
     label: 'Email me',
     ariaLabel: 'Send email',
-    showInHero: false,
-  },
-  {
-    name: 'dribbble',
-    href: '#',
-    label: 'Dribbble',
-    ariaLabel: 'Follow on Dribbble',
     showInHero: true,
   },
+  // {
+  //   name: 'dribbble',
+  //   href: '#',
+  //   label: 'Dribbble',
+  //   ariaLabel: 'Follow on Dribbble',
+  //   showInHero: false,
+  // },
   {
     name: 'instagram',
-    href: '#',
+    href: 'https://www.instagram.com/appcrafters.dev?igsh=MWVzNmIyM3ZtZHhndQ==',
     label: 'Instagram',
     ariaLabel: 'Follow on Instagram',
     showInHero: true,
   },
-  {
-    name: 'x',
-    href: '#',
-    label: 'Twitter / X',
-    ariaLabel: 'Follow on X',
-    showInHero: true,
-  },
+  // {
+  //   name: 'x',
+  //   href: '#',
+  //   label: 'Twitter / X',
+  //   ariaLabel: 'Follow on X',
+  //   showInHero: false,
+  // },
   {
     name: 'linkedin',
-    href: '#',
+    href: 'https://www.linkedin.com/company/appcrafters-dev/',
     label: 'LinkedIn',
     ariaLabel: 'Follow on LinkedIn',
-    showInHero: false,
+    showInHero: true,
   },
-  {
-    name: 'github',
-    href: '#',
-    label: 'Github',
-    ariaLabel: 'Follow on Github',
-    showInHero: false,
-  },
+  // {
+  //   name: 'github',
+  //   href: '#',
+  //   label: 'Github',
+  //   ariaLabel: 'Follow on Github',
+  //   showInHero: false,
+  // },
 ]
 
 export const STACK: StackObjects = [
@@ -97,9 +98,9 @@ export const STACK: StackObjects = [
     logo: sketch,
   },
   {
-    name: 'Rails',
-    experience: '7+ years of experience',
-    logo: rails,
+    name: 'Flutter',
+    experience: '5+ years of experience',
+    logo: flutter,
   },
   {
     name: 'Netlify',

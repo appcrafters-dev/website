@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets'
-import logo from '@images/logo.png'
-import logoIcon from '@images/logo-icon.png'
+import logo from '@images/logo.svg'
+import logoIcon from '@images/appcrafters.png'
 import { Icon } from 'astro-icon'
 import Button from '@components/Button.astro'
 import { FEATURE_FLAG } from '@config'
@@ -12,7 +12,6 @@ const links = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
   { label: 'Work', href: '/work' },
-  { label: 'Contact', href: '/contact' },
 ]
 
 if (FEATURE_FLAG.SHOW_BLOG) {
@@ -23,12 +22,13 @@ const pages = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
   { label: 'Work', href: '/work' },
-  { label: 'Case study', href: '/work/horizons-in-perspective' },
+  // { label: 'Technology', href: '/technology' },
+  // { label: 'Case study', href: '/work/horizons-in-perspective' },
   { label: 'Blog', href: '/blog' },
-  {
-    label: 'Blog post',
-    href: '/blog/how-i-use-tailwind-to-design-from-scratch',
-  },
+  // {
+  //   label: 'Blog post',
+  //   href: '/blog/how-i-use-tailwind-to-design-from-scratch',
+  // },
   { label: 'Contact', href: '/contact' },
 ]
 ---
@@ -41,15 +41,15 @@ const pages = [
       <!-- Logo -->
       <div class="flex shrink-0 items-center">
         <a href="/" aria-label="Home" class="flex flex-shrink-0 items-center">
-          <Image
+          <!-- <Image
             src={logo}
             alt=""
             class="h-8 w-auto sm:h-9 md:hidden lg:block lg:h-10"
-          />
+          /> -->
           <Image
             src={logoIcon}
             alt=""
-            class="hidden h-8 w-auto md:block lg:hidden"
+            class="h-8 w-auto sm:h-9 md:hidden lg:block lg:h-10"
           />
         </a>
       </div>
@@ -74,21 +74,22 @@ const pages = [
         }
 
         <!-- Template pages dropdown container -->
+           <!-- Pages dropdown button -->
         <div class="relative" x-data="{ open: false }">
-          <!-- Pages dropdown button -->
+        
           <button
             type="button"
             class="group flex items-center font-medium duration-200 ease-in-out"
             :class="open ? 'text-slate-900' : 'text-slate-700  hover:text-slate-900'"
             @click="open = true"
           >
-            <span>Pages</span>
+            <!-- <span>Pages</span>
 
             <Icon
               name="chevron-down"
               class="ml-2 h-5 w-5 duration-300"
               :class="open ? 'rotate-180 text-slate-900' : 'text-slate-600 group-hover:text-slate-800'"
-            />
+            /> -->
           </button>
 
           <!-- Pages dropdown -->
@@ -119,7 +120,7 @@ const pages = [
 
       <div class="flex items-center">
         <!-- Call to action -->
-        <Button href="#0" variant="secondary">Book a call</Button>
+        <Button href="/contact" variant="secondary">Connect with us</Button>
 
         <!-- Mobile menu button -->
         <div class="ml-4 md:hidden" x-data="{ mobileMenuOpen: false }">
@@ -185,6 +186,7 @@ const pages = [
                       <a
                         href={link.href}
                         class="block text-base font-semibold text-slate-700 duration-200 hover:text-slate-900"
+                        target="_blank"
                       >
                         {link.label}
                       </a>
@@ -218,6 +220,7 @@ const pages = [
                             <a
                               href={link.href}
                               class="block text-md font-medium text-slate-700 transition duration-200 ease-in-out hover:text-slate-900"
+                              target="_blank"
                             >
                               {link.label}
                             </a>

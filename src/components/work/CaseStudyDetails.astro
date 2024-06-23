@@ -10,29 +10,36 @@ interface Props {
 
 const {
   caseStudy: {
-    data: { client, description, timeline, projectURL },
+    data: { client, description, timeline, projectURL, technology, features },
   },
 } = Astro.props
 
-function getFormattedTimeline(timeline: { start: Date; end: Date }) {
-  const monthDifference =
-    (timeline.end.getFullYear() - timeline.start.getFullYear()) * 12 +
-    (timeline.end.getMonth() - timeline.start.getMonth())
-
+function getFormattedTimeline(timeline: { start: Date | null ; end: Date | null }) {
+  if (!timeline.start) {
+    return 'Unknown';
+  }
+  
   const formatter = new Intl.DateTimeFormat('en-US', {
     month: 'short',
     year: 'numeric',
-  })
-  const startFormatted = formatter.format(timeline.start)
-  const endFormatted = formatter.format(timeline.end)
+  });
 
-  // Handle pluralization
-  const monthLabel = monthDifference === 1 ? 'month' : 'months'
+  if (!timeline.end) {
+    return `${formatter.format(timeline.start)} to Present`;
+  }
 
-  const formattedTimeline = `${monthDifference} ${monthLabel} (${startFormatted} - ${endFormatted})`
+  const monthDifference =
+    (timeline.end.getFullYear() - timeline.start.getFullYear()) * 12 +
+    (timeline.end.getMonth() - timeline.start.getMonth());
 
-  return formattedTimeline
+  const monthLabel = monthDifference === 1 ? 'month' : 'months';
+  const formattedTimeline = `${monthDifference} ${monthLabel} (${formatter.format(
+    timeline.start
+  )} - ${formatter.format(timeline.end)})`;
+
+  return formattedTimeline;
 }
+
 ---
 
 <section class="overflow-hidden bg-white py-16 sm:py-20 lg:py-28">
@@ -43,22 +50,46 @@ function getFormattedTimeline(timeline: { start: Date; end: Date }) {
       class="order-2 mt-8 border-t border-slate-200 pt-8 lg:order-1 lg:col-span-3 lg:mt-0 lg:border-0 lg:pr-8 lg:pt-0"
     >
       <dl class="space-y-8">
-        <Detail label="Client" data={client.description} />
-        <Detail label="Industry" data={client.industry} />
-        <Detail label="Company Size" data={client.companySize} />
-        <Detail label="Headquarters" data={client.headquarters} />
-        <Detail
+        {
+          (client.description as string)?.trim() && (
+            <Detail label="Client" data={client.description} />
+          )
+        }
+        {
+          client.industry?.trim() && (
+            <Detail label="Industry" data={client.industry} />
+          )
+        }
+        {
+          technology?.trim() && (
+            <Detail label="Technology" data={technology} />
+          )
+        }
+        {
+          client.companySize?.trim() && (
+            <Detail label="Company Size" data={client.companySize} />
+          )
+        }
+        {
+          client.headquarters?.trim() && (
+            <Detail label="Headquarters" data={client.headquarters} />
+          )
+        }
+
+        <!-- <Detail
           label="Project Duration"
           data={getFormattedTimeline(timeline)}
-        />
+        /> -->
       </dl>
-      <Button href={projectURL} target="_blank" class="mt-14 !font-medium">
-        Visit Website
-        <Icon
-          name="arrow-up-right"
-          class="h-5 w-5 text-slate-50 duration-200 ease-in-out group-hover:text-white"
-        />
-      </Button>
+      { (projectURL ?? projectURL)?.trim() && (
+        <Button href={projectURL ?? undefined} class="mt-14 !font-medium">
+          Visit Website
+          <Icon
+            name="arrow-up-right"
+            class="h-5 w-5 text-slate-50 duration-200 ease-in-out group-hover:text-white"
+          />
+        </Button>
+      )}
     </div>
     <div class="order-1 lg:order-2 lg:col-span-7 lg:pl-16">
       <h3
@@ -67,6 +98,29 @@ function getFormattedTimeline(timeline: { start: Date; end: Date }) {
         {description}
       </h3>
       <div class="prose mt-6 sm:prose-lg sm:mt-8"><slot /></div>
+      {
+        features && (
+          <div class="mt-5">
+            <p class="font-display text-xl font-medium leading-8 text-slate-900 sm:text-3xl sm:leading-10">
+              Features:
+            </p>
+            <ul>
+              {features.map((feature: any, index) => (
+                <li class="mb-3 mt-2">
+                  <strong class="text-xl font-medium leading-8 text-slate-900 sm:leading-10">{index + 1}. {feature.title}</strong>
+                  {feature.items && (
+                    <ul class="list-disc pl-6">
+                      {feature.items.map((item : any) => (
+                        <li class="font-normal text-slate-700">{item}</li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )
+      }
     </div>
   </div>
 </section>
