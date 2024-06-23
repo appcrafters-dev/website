@@ -6,7 +6,7 @@ import Stack from '@components/Stack.astro'
 import FeaturedWork from '@components/work/FeaturedWork.astro'
 import Testimonials from '@components/Testimonials.astro'
 import FeaturedPosts from '@components/blog/FeaturedPosts.astro'
-import { SITE } from '@config'
+import { SITE, FEATURE_FLAGS } from '@config'
 ---
 
 <Layout
@@ -17,5 +17,7 @@ import { SITE } from '@config'
   <Stack />
   <FeaturedWork />
   <Testimonials />
-  <FeaturedPosts />
+  {
+    FEATURE_FLAGS.SHOW_BLOG && <FeaturedPosts />
+  }
 </Layout>
