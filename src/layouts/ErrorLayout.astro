@@ -1,0 +1,39 @@
+---
+import '@styles/tailwind.css'
+import '@fontsource-variable/inter'
+import '@fontsource-variable/lexend'
+import '@fontsource/gochi-hand'
+import Header from '@components/Header.astro'
+import Footer from '@components/Footer.astro'
+import { SITE } from '@config'
+import { ViewTransitions } from 'astro:transitions'
+
+interface Props {
+  title?: string
+}
+
+const {
+  title = SITE.title,
+} = Astro.props
+
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- General Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <ViewTransitions />
+  </head>
+  <body>
+    <Header />
+    <slot />
+  </body>
+</html>
