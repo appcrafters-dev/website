@@ -4,7 +4,7 @@ import logo from '@images/logo.svg'
 import logoIcon from '@images/appcrafters.png'
 import { Icon } from 'astro-icon'
 import Button from '@components/Button.astro'
-import { FEATURE_FLAG } from '@config'
+import { FEATURE_FLAGS } from '@config'
 
 const pathname = Astro.url.pathname.replace(/(?<=.)\/$/, '')
 
@@ -14,7 +14,7 @@ const links = [
   { label: 'Work', href: '/work' },
 ]
 
-if (FEATURE_FLAG.SHOW_BLOG) {
+if (FEATURE_FLAGS.SHOW_BLOG) {
   links.push({ label: 'Blog', href: '/blog' })
 }
 
