@@ -132,5 +132,5 @@ export const STACK: StackObjects = [
 ]
 
 export const FEATURE_FLAG = {
-  SHOW_BLOG: true,
+  SHOW_BLOG: false,
 }
