@@ -26,6 +26,7 @@ import Button from '../Button.astro'
       name="name"
       auto-complete="name"
       placeholder="Mark Smith"
+      required
     />
     <TextField
       label="Email"
@@ -33,6 +34,7 @@ import Button from '../Button.astro'
       type="email"
       auto-complete="email"
       placeholder="mark@email.com"
+      required
     />
     <TextField
       label="Phone"
@@ -42,6 +44,7 @@ import Button from '../Button.astro'
       aria-describedby="phone-description"
       placeholder="+1 (800) 123-4567"
       description="Optional"
+      maxlength = "10"
     />
     <TextField
       label="Message"
@@ -50,6 +53,7 @@ import Button from '../Button.astro'
       aria-describedby="message-description"
       placeholder="Tell me a little bit about your project..."
       description="Max 500 characters"
+      maxlength = "500"
     />
     <fieldset>
       <legend class="block text-md font-medium leading-6 text-slate-900">
