@@ -6,6 +6,7 @@ import Button from '../Button.astro'
 
 <form 
   name="contact" 
+  action="post"
   method="POST" 
   data-netlify="true" 
   data-netlify-honeypot="bot-field" 
@@ -25,6 +26,7 @@ import Button from '../Button.astro'
       name="name"
       auto-complete="name"
       placeholder="Mark Smith"
+      required
     />
     <TextField
       label="Email"
@@ -32,6 +34,7 @@ import Button from '../Button.astro'
       type="email"
       auto-complete="email"
       placeholder="mark@email.com"
+      required
     />
     <TextField
       label="Phone"
@@ -41,6 +44,7 @@ import Button from '../Button.astro'
       aria-describedby="phone-description"
       placeholder="+1 (800) 123-4567"
       description="Optional"
+      maxlength = "10"
     />
     <TextField
       label="Message"
@@ -49,6 +53,7 @@ import Button from '../Button.astro'
       aria-describedby="message-description"
       placeholder="Tell me a little bit about your project..."
       description="Max 500 characters"
+      maxlength = "500"
     />
     <fieldset>
       <legend class="block text-md font-medium leading-6 text-slate-900">
@@ -62,9 +67,12 @@ import Button from '../Button.astro'
       </div>
     </fieldset>
   </div>
+  <div class="mt-4" data-netlify-recaptcha="true"></div>
   <div class="mt-10 border-t border-slate-200 pt-8">
     <Button type="submit" class="w-full !text-base sm:!text-lg">
       Inquire now
     </Button>
   </div>
 </form>
+
+

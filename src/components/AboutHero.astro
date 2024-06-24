@@ -1,160 +1,167 @@
 ---
 import { Image } from 'astro:assets'
+import '@fontsource/mr-dafoe'
+import CurvyLines from '@components/illustrations/CurvyLines.astro'
 import Container from './Container.astro'
 import Underline from '@components/illustrations/Underline.astro'
-import heroImage from '@images/about-hero.png'
-import '@fontsource/mr-dafoe'
-import about from '@images/about/about.webp'
-import vision  from '@images/about/vision.png'
+import heroImage from '@images/about/abouthero.webp'
+import bgGradient from '@images/about-hero-gradient.svg'
+import vision from '@images/about/vision.jpg'
 import mission from '@images/about/mission.png'
 import pruthvi from '@images/about/pruthvi.jpg'
 import shubh from '@images/about/shubh.png'
 import dhrumil from '@images/about/dhrumil.png'
 ---
 
-<style>
-  .about-us-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-    padding: 2rem;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-  .mission-text {
-    text-align: center;
-  }
-  .mission-text h2 {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-  }
-  .mission-text p {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-    color: #374151; /* Slate-700 */
-  }
-  .mission-image img {
-    border-radius: 10%;
-    max-width: 100%;
-    height: auto;
-  }
-  @media (max-width: 768px) {
-    .about-us-section {
-      grid-template-columns: 1fr;
-      text-align: center;
-    }
-  }
-</style>
+<section class="relative bg-slate-50/50">
+  <Image
+    src={bgGradient}
+    alt=""
+    class="absolute inset-0 h-full w-full object-cover object-left lg:w-2/3"
+  />
 
-
-
-<section class="relative">
-
-
-  <Container class="relative py-16 lg:py-10">
+  <Container class="relative py-16 sm:py-24 lg:py-32">
     <div
-      class="mx-auto max-w-2xl px-4 sm:px-6 lg:mx-0 lg:w-2/3 lg:max-w-none lg:px-8 lg:pr-16"
+      class="mx-auto max-w-3xl px-4 sm:px-6 lg:mx-0 lg:w-2/3 lg:max-w-none lg:px-8 lg:pr-16"
     >
       <h1
         class="font-display text-5xl font-semibold text-slate-900 sm:text-6xl"
       >
         <span class="relative whitespace-nowrap">
           <Underline />
-          <span class="relative">Next Gen of Engineers</span>
-        </span>{' '}
+          <span class="relative">Next Gen Engineers</span>
+        </span>
       </h1>
-      <h2 class="font-display mt-3 text-2xl font-semibold text-slate-900">
-        Creating the best for this era of digital solutions
-      </h2>
-      <p class="mt-8 text-lg leading-8 text-slate-700 ">
-        A passionate team of college friends turned entrepreneurs, we are tech geeks who love businesses and living on the edge. At Appcrafters, we prioritize innovation, customization, and quality above all. We transform world-class tech ideas into reality, delivering cutting-edge digital solutions that drive our clients toward unprecedented success.
+      <h3
+        class="mt-2 font-display text-3xl font-medium text-slate-700 sm:mt-4 sm:text-4xl"
+      >
+        Crafting top digital solutions
+      </h3>
+      <p class="mt-8 text-lg leading-8 text-slate-700">
+        A passionate team of college friends turned entrepreneurs, we are tech
+        geeks who love businesses and living on the edge. At Appcrafters, we
+        prioritize innovation, customization, and quality above all. We
+        transform world-class tech ideas into reality, delivering cutting-edge
+        digital solutions that drive our clients toward unprecedented success.
       </p>
-      <p class="mt-6 text-lg leading-8 text-slate-700 ">
-        Innovation is our core. We relentlessly push the boundaries of technology to deliver customized, high-quality solutions that empower our clients to achieve exceptional success.
+      <p class="mt-6 text-lg leading-8 text-slate-700">
+        Innovation is our core. We relentlessly push the boundaries of
+        technology to deliver customized, high-quality solutions that empower
+        our clients to achieve exceptional success.
       </p>
-      <div
+      <p class="mt-16 font-cursive text-3xl text-slate-700">Appcrafters</p>
+    </div>
+  </Container>
+  <div
     class="relative h-96 w-full md:h-[600px] lg:absolute lg:inset-y-0 lg:right-0 lg:h-full lg:w-1/3"
   >
     <Image
-      src={about}
+      src={heroImage}
       alt=""
-      class="absolute inset-0 h-full w-full object-cover object-top"
+      class="absolute inset-0 h-full w-full object-cover object-left"
+    />
+    <CurvyLines />
+  </div>
+</section>
+
+<section
+  class="mx-4 mt-14 grid max-w-full grid-cols-1 items-center justify-center gap-8 lg:mx-auto lg:grid-cols-2 lg:px-60"
+>
+  <div class="mission-text text-center">
+    <h2 class="mb-4 text-2xl font-bold">Our Vision</h2>
+    <p class="text-lg leading-7 text-slate-700">
+      Our vision is to be the catalyst for digital transformation, enabling
+      businesses to excel and individuals to realize their full potential.
+      Through cutting-edge technology and exceptional service, we create
+      seamless and impactful digital experiences.
+    </p>
+  </div>
+  <div class="mission-image flex justify-center">
+    <Image
+      src={vision}
+      alt="Company Vision"
+      class="h-auto max-w-[70%] rounded-[10%]"
     />
   </div>
-      
-    </div>
-    
-  </Container>
-  <section>
-    <div class="about-us-section">
-      <div class="mission-text">
-        <h2>Our Vision</h2>
-        <p class="">
-          Our vision is to be the catalyst for digital transformation, enabling businesses to excel and individuals to realize their full potential. Through cutting-edge technology and exceptional service, we create seamless and impactful digital experiences.
-        </p>
-      </div>
-      <div class="mission-image">
-        <img src={vision.src} alt="Company Vision" />
-      </div>
-    </div>
-  
-    <div class="about-us-section">
-      <div class="mission-image">
-        <img src={mission.src} alt="Company Mission" />
-      </div>
-      <div class="mission-text">
-        <h2>Our Mission</h2>
-        <p class="">
-          Our mission is to be the go-to partner for businesses seeking excellence through digital transformation. We aim to deliver tailored solutions that fuel growth, optimize processes, and enhance customer satisfaction, ensuring our clients achieve their highest potential.
-        </p>
-      </div>
-    </div>
-  </section>
+</section>
 
-  <!-- Generate 3 box gridview with photo,name,country,role -->
-  <div>
-    <center><p class="mt-16 font-cursive text-3xl text-slate-700">Appcrafters</p></center>
-    <div class="grid grid-cols-1 gap-6 mt-14 mx-14 sm:grid-cols-2 lg:grid-cols-3">
-      <div class="flex flex-col items-center justify-center p-6 bg-white rounded-lg shadow-lg">
-        <div class="flex items-center justify-center w-24 h-24 bg-slate-100 rounded-full">
-          <Image
-            src={pruthvi}
-            alt=""
-            class="w-30 h-30 rounded-full"
-          />
-        </div>
-        <div class="mt-4 text-center">
-          <h3 class="text-lg font-semibold text-slate-900">Pruthvi Patel</h3>
-          <p class="mt-2 text-base text-slate-700">Australia</p>
-          <p class="mt-2 text-base text-slate-700">Founder</p>
-        </div>
+<section
+  class="mx-4 grid max-w-full grid-cols-1 items-center justify-center gap-8 lg:mx-auto lg:grid-cols-2 lg:px-60"
+>
+  <div class="mission-text text-center">
+    <h2 class="mb-4 text-2xl font-bold">Our Mission</h2>
+    <p class="text-lg leading-7 text-slate-700">
+      Our mission is to be the go-to partner for businesses seeking excellence
+      through digital transformation. We aim to deliver tailored solutions that
+      fuel growth, optimize processes, and enhance customer satisfaction,
+      ensuring our clients achieve their highest potential.
+    </p>
+  </div>
+  <div class="mission-image flex justify-center">
+    <Image
+      src={mission}
+      alt="Company Mission"
+      class="h-auto max-w-[70%] rounded-[10%]"
+    />
+  </div>
+</section>
+
+<div class="py-16">
+  <center
+    ><p class="mt-14 text-4xl font-bold text-slate-900">
+      Meet The Team
+    </p></center
+  >
+  <div
+    class="mx-4 mt-14 grid grid-cols-1 gap-8 sm:mx-10 sm:grid-cols-2 lg:mx-20 lg:grid-cols-3"
+  >
+    <div
+      class="flex transform flex-col items-center justify-center rounded-xl bg-gradient-to-br from-white to-gray-100 p-6 shadow-xl transition-transform hover:scale-105"
+    >
+      <div class="flex h-24 w-24 items-center justify-center">
+        <Image
+          src={pruthvi}
+          alt=""
+          class="h-20 w-20 rounded-full border-4 border-white shadow-lg"
+        />
       </div>
-      <div class="flex flex-col items-center justify-center p-6 bg-white rounded-lg shadow-lg">
-        <div class="flex items-center justify-center w-24 h-24 bg-slate-100 rounded-full">
-          <Image
-            src={shubh}
-            alt=""
-            class="w-30 h-30 rounded-full"
-          />
-        </div>
-        <div class="mt-4 text-center">
-          <h3 class="text-lg font-semibold text-slate-900">Shubh Utekar</h3>
-          <p class="mt-2 text-base text-slate-700">Canada</p>
-          <p class="mt-2 text-base text-slate-700">Co-Founder</p>
-        </div>
+      <div class="mt-4 text-center">
+        <h3 class="text-lg font-semibold text-slate-900">Pruthvi Patel</h3>
+        <p class="mt-2 text-base text-slate-700">Australia</p>
+        <p class="mt-2 text-base text-slate-700">Founder</p>
       </div>
-      <div class="flex flex-col items-center justify-center p-6 bg-white rounded-lg shadow-lg">
-        <div class="flex items-center justify-center w-24 h-24 bg-slate-100 rounded-full">
-          <Image
-            src={dhrumil}
-            alt=""
-            class="w-30 h-30 rounded-full"
-          />
-        </div>
-        <div class="mt-4 text-center">
-          <h3 class="text-lg font-semibold text-slate-900">Dhrumil Pandya</h3>
-          <p class="mt-2 text-base text-slate-700">India</p>
-          <p class="mt-2 text-base text-slate-700">Co-Founder</p>
-   </div>
+    </div>
+    <div
+      class="flex transform flex-col items-center justify-center rounded-xl bg-gradient-to-br from-white to-gray-100 p-6 shadow-xl transition-transform hover:scale-105"
+    >
+      <div class="flex h-24 w-24 items-center justify-center">
+        <Image
+          src={shubh}
+          alt=""
+          class="h-20 w-20 rounded-full border-4 border-white shadow-lg"
+        />
+      </div>
+      <div class="mt-4 text-center">
+        <h3 class="text-lg font-semibold text-slate-900">Shubh Utekar</h3>
+        <p class="mt-2 text-base text-slate-700">Canada</p>
+        <p class="mt-2 text-base text-slate-700">Co-Founder</p>
+      </div>
+    </div>
+    <div
+      class="flex transform flex-col items-center justify-center rounded-xl bg-gradient-to-br from-white to-gray-100 p-6 shadow-xl transition-transform hover:scale-105"
+    >
+      <div class="flex h-24 w-24 items-center justify-center">
+        <Image
+          src={dhrumil}
+          alt=""
+          class="h-20 w-20 rounded-full border-4 border-white shadow-lg"
+        />
+      </div>
+      <div class="mt-4 text-center">
+        <h3 class="text-lg font-semibold text-slate-900">Dhrumil Pandya</h3>
+        <p class="mt-2 text-base text-slate-700">India</p>
+        <p class="mt-2 text-base text-slate-700">Co-Founder</p>
+      </div>
+    </div>
+  </div>
+</div>

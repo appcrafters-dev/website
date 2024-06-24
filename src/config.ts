@@ -28,7 +28,7 @@ export const SITE: Site = {
 export const SOCIALS: SocialObjects = [
   {
     name: 'mail',
-    href: 'mailto:appcrafters.dev@gmail.com',
+    href: 'https://mail.google.com/mail/?view=cm&fs=1&to=appcrafters.dev@gmail.com',
     label: 'Email me',
     ariaLabel: 'Send email',
     showInHero: true,
