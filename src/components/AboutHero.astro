@@ -13,20 +13,30 @@ import shubh from '@images/about/shubh.png'
 import dhrumil from '@images/about/dhrumil.png'
 ---
 
-<section class="relative">
+<section class="relative bg-slate-50/50">
+  <Image
+    src={bgGradient}
+    alt=""
+    class="absolute inset-0 h-full w-full object-cover object-left lg:w-2/3"
+  />
+
   <Container class="relative py-16 sm:py-24 lg:py-32">
     <div
-      class="mx-auto max-w-2xl px-4 sm:px-6 lg:mx-0 lg:w-2/3 lg:max-w-none lg:px-8 lg:pr-16"
+      class="mx-auto max-w-3xl px-4 sm:px-6 lg:mx-0 lg:w-2/3 lg:max-w-none lg:px-8 lg:pr-16"
     >
       <h1
         class="font-display text-5xl font-semibold text-slate-900 sm:text-6xl"
       >
         <span class="relative whitespace-nowrap">
           <Underline />
-          <span class="relative">Next Gen of Engineers</span>
-        </span>{' '}
-         <p class="font-display text-3xl font-semibold text-slate-900 sm:text-2xl">creating the best for this era of digital solutions</p>
+          <span class="relative">Next Gen Engineers</span>
+        </span>
       </h1>
+      <h3
+        class="mt-2 font-display text-3xl font-medium text-slate-700 sm:mt-4 sm:text-4xl"
+      >
+        Crafting top digital solutions
+      </h3>
       <p class="mt-8 text-lg leading-8 text-slate-700">
         A passionate team of college friends turned entrepreneurs, we are tech
         geeks who love businesses and living on the edge. At Appcrafters, we
@@ -48,42 +58,72 @@ import dhrumil from '@images/about/dhrumil.png'
     <Image
       src={heroImage}
       alt=""
-      class="absolute inset-0 h-full w-full object-cover object-top"
+      class="absolute inset-0 h-full w-full object-cover object-left"
     />
     <CurvyLines />
   </div>
 </section>
 
-<section class="mt-14 grid grid-cols-1 lg:grid-cols-2 gap-8 justify-center items-center max-w-full mx-4 lg:mx-auto lg:px-60">
+<section
+  class="mx-4 mt-14 grid max-w-full grid-cols-1 items-center justify-center gap-8 lg:mx-auto lg:grid-cols-2 lg:px-60"
+>
   <div class="mission-text text-center">
-    <h2 class="text-2xl font-bold mb-4">Our Vision</h2>
+    <h2 class="mb-4 text-2xl font-bold">Our Vision</h2>
     <p class="text-lg leading-7 text-slate-700">
-      Our vision is to be the catalyst for digital transformation, enabling businesses to excel and individuals to realize their full potential. Through cutting-edge technology and exceptional service, we create seamless and impactful digital experiences.
+      Our vision is to be the catalyst for digital transformation, enabling
+      businesses to excel and individuals to realize their full potential.
+      Through cutting-edge technology and exceptional service, we create
+      seamless and impactful digital experiences.
     </p>
   </div>
   <div class="mission-image flex justify-center">
-    <Image src={vision} alt="Company Vision" class="rounded-[10%] max-w-[70%] h-auto" />
+    <Image
+      src={vision}
+      alt="Company Vision"
+      class="h-auto max-w-[70%] rounded-[10%]"
+    />
   </div>
 </section>
 
-<section class="grid grid-cols-1 lg:grid-cols-2 gap-8 justify-center items-center max-w-full mx-4 lg:mx-auto lg:px-60">
+<section
+  class="mx-4 grid max-w-full grid-cols-1 items-center justify-center gap-8 lg:mx-auto lg:grid-cols-2 lg:px-60"
+>
   <div class="mission-text text-center">
-    <h2 class="text-2xl font-bold mb-4">Our Mission</h2>
+    <h2 class="mb-4 text-2xl font-bold">Our Mission</h2>
     <p class="text-lg leading-7 text-slate-700">
-      Our mission is to be the go-to partner for businesses seeking excellence through digital transformation. We aim to deliver tailored solutions that fuel growth, optimize processes, and enhance customer satisfaction, ensuring our clients achieve their highest potential.
+      Our mission is to be the go-to partner for businesses seeking excellence
+      through digital transformation. We aim to deliver tailored solutions that
+      fuel growth, optimize processes, and enhance customer satisfaction,
+      ensuring our clients achieve their highest potential.
     </p>
   </div>
   <div class="mission-image flex justify-center">
-    <Image src={mission} alt="Company Mission" class="rounded-[10%] max-w-[70%] h-auto" />
+    <Image
+      src={mission}
+      alt="Company Mission"
+      class="h-auto max-w-[70%] rounded-[10%]"
+    />
   </div>
 </section>
 
 <div class="py-16">
-  <center><p class="text-4xl mt-14 font-bold text-slate-900">Meet The Team</p></center>
-  <div class="grid grid-cols-1 gap-8 mt-14 mx-4 sm:mx-10 lg:mx-20 sm:grid-cols-2 lg:grid-cols-3">
-    <div class="flex flex-col items-center justify-center p-6 bg-gradient-to-br from-white to-gray-100 rounded-xl shadow-xl transform transition-transform hover:scale-105">
-      <div class="flex items-center justify-center w-24 h-24">
-        <Image src={pruthvi} alt="" class="w-20 h-20 rounded-full border-4 border-white shadow-lg" />
+  <center
+    ><p class="mt-14 text-4xl font-bold text-slate-900">
+      Meet The Team
+    </p></center
+  >
+  <div
+    class="mx-4 mt-14 grid grid-cols-1 gap-8 sm:mx-10 sm:grid-cols-2 lg:mx-20 lg:grid-cols-3"
+  >
+    <div
+      class="flex transform flex-col items-center justify-center rounded-xl bg-gradient-to-br from-white to-gray-100 p-6 shadow-xl transition-transform hover:scale-105"
+    >
+      <div class="flex h-24 w-24 items-center justify-center">
+        <Image
+          src={pruthvi}
+          alt=""
+          class="h-20 w-20 rounded-full border-4 border-white shadow-lg"
+        />
       </div>
       <div class="mt-4 text-center">
         <h3 class="text-lg font-semibold text-slate-900">Pruthvi Patel</h3>
@@ -91,9 +131,15 @@ import dhrumil from '@images/about/dhrumil.png'
         <p class="mt-2 text-base text-slate-700">Founder</p>
       </div>
     </div>
-    <div class="flex flex-col items-center justify-center p-6 bg-gradient-to-br from-white to-gray-100 rounded-xl shadow-xl transform transition-transform hover:scale-105">
-      <div class="flex items-center justify-center w-24 h-24">
-        <Image src={shubh} alt="" class="w-20 h-20 rounded-full border-4 border-white shadow-lg" />
+    <div
+      class="flex transform flex-col items-center justify-center rounded-xl bg-gradient-to-br from-white to-gray-100 p-6 shadow-xl transition-transform hover:scale-105"
+    >
+      <div class="flex h-24 w-24 items-center justify-center">
+        <Image
+          src={shubh}
+          alt=""
+          class="h-20 w-20 rounded-full border-4 border-white shadow-lg"
+        />
       </div>
       <div class="mt-4 text-center">
         <h3 class="text-lg font-semibold text-slate-900">Shubh Utekar</h3>
@@ -101,9 +147,15 @@ import dhrumil from '@images/about/dhrumil.png'
         <p class="mt-2 text-base text-slate-700">Co-Founder</p>
       </div>
     </div>
-    <div class="flex flex-col items-center justify-center p-6 bg-gradient-to-br from-white to-gray-100 rounded-xl shadow-xl transform transition-transform hover:scale-105">
-      <div class="flex items-center justify-center w-24 h-24">
-        <Image src={dhrumil} alt="" class="w-20 h-20 rounded-full border-4 border-white shadow-lg" />
+    <div
+      class="flex transform flex-col items-center justify-center rounded-xl bg-gradient-to-br from-white to-gray-100 p-6 shadow-xl transition-transform hover:scale-105"
+    >
+      <div class="flex h-24 w-24 items-center justify-center">
+        <Image
+          src={dhrumil}
+          alt=""
+          class="h-20 w-20 rounded-full border-4 border-white shadow-lg"
+        />
       </div>
       <div class="mt-4 text-center">
         <h3 class="text-lg font-semibold text-slate-900">Dhrumil Pandya</h3>
